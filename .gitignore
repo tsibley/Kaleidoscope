@@ -13,3 +13,4 @@
 /results/
 generated-testcase.cpp
 .arduino
+/bin/arduino-cli
