@@ -482,9 +482,13 @@ void setup() {
   // needs to be explicitly told which keymap layer is your numpad layer
   NumPad.numPadLayer = NUMPAD;
 
-  // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
-  // This draws more than 500mA, but looks much nicer than a dimmer effect
-  LEDRainbowEffect.brightness(150);
+  // Historically, we set the brightness of the rainbow effects to 150 (on a
+  // scale of 0-255), which still drew more than 500mA, but looked much nicer
+  // than a dimmer effect.
+  //
+  // Nowadays, we max out the brightness (esp. with blank keycaps that don't
+  // have translucent legends) and draw even more current.
+  LEDRainbowEffect.brightness(255);
 
   // Set the action key the test mode should listen for to Left Fn
   HardwareTestMode.setActionKey(R3C6);
